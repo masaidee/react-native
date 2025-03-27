@@ -1,18 +1,48 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Detail from './Detail'; // นำเข้า Detail component
+const Tab = createBottomTabNavigator();
 
-const Dashboard = ({ route, navigation }) => {
-    const { username } = route.params; // รับ username จาก route.params
-
+const HomeScreen = ({ route }) => {
+    const username = route?.params?.username || 'Guest'; // รับ username หรือใช้ค่าเริ่มต้น
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Welcome to the Dashboard!</Text>
-            <Text style={styles.username}>Hello, {username}!</Text> {/* แสดง username */}
-            <Button
-                title="Logout"
-                onPress={() => navigation.navigate('Login')}
-            />
+            <Text style={styles.username}>Hello, {username}!</Text>
         </View>
+    );
+};
+
+
+
+const Dashboard = ({ route }) => {
+    return (
+            <Tab.Navigator
+                screenOptions={{
+                    tabBarStyle: { backgroundColor: '#5e3586' },
+                    tabBarActiveTintColor: '#ffffff',
+                    tabBarInactiveTintColor: '#ccc',
+                }}
+            >
+                <Tab.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    initialParams={route.params}
+                    options={{
+                        headerShown: true,
+                        tabBarLabel: 'Home',
+                        tabBarIcon: ({ color }) => (
+                            <Text style={{ color }}>🏠</Text>
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Detail"
+                    component={Detail}
+                />
+            </Tab.Navigator>
+
     );
 };
 
@@ -30,7 +60,6 @@ const styles = StyleSheet.create({
     },
     username: {
         fontSize: 18,
-        marginBottom: 20,
     },
 });
 

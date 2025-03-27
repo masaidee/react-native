@@ -25,9 +25,10 @@ const Index = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        // marginTop: 55,
         paddingTop: 50,
         alignItems: 'center',
-        backgroundColor: '#000000',
+        backgroundColor: '#ffffff',
     },
     logo: {
         width: 200,
