@@ -38,7 +38,7 @@ const App = () => {
                 <Stack.Screen
                     name="Dashboard"
                     component={Dashboard} 
-                    options={{headerShown: true, title: 'Dashboard', headerStyle: { backgroundColor: '#5e3586' }, headerTintColor: '#fff', headerTitleStyle: { fontWeight: 'bold' } }}
+                    options={{headerShown: false, title: 'Dashboard', headerStyle: { backgroundColor: '#5e3586' }, headerTintColor: '#fff', headerTitleStyle: { fontWeight: 'bold' } }}
                     />
 
                 <Stack.Screen

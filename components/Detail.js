@@ -6,8 +6,37 @@ const Detail = ({ route }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Detail</Text>
-            <Text style={styles.description}>name</Text>
+            <View>
+                <Text style={{ fontSize: 24, fontWeight: "bold" }}>
+                    Health Information
+                </Text>
+            </View>
+            <View style={{ marginTop: 20 }}>
+                <Text style={{ fontSize: 18 }}>
+                    This is the detail screen for health information.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    You can add more details about health here.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    This is a placeholder for the health information details.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    You can customize this screen as needed.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    This is a placeholder for the health information details.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    You can customize this screen as needed.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    This is a placeholder for the health information details.
+                </Text>
+                <Text style={{ fontSize: 18 }}>
+                    You can customize this screen as needed.
+                </Text>
+            </View>
         </View>
     );
 }
@@ -17,15 +46,6 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         backgroundColor: "#fff",
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: "bold",
-        marginBottom: 10,
-    },
-    description: {
-        fontSize: 16,
-        color: "#555",
     },
 });
 

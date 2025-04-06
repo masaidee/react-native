@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, TextInput, Button, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 
 const Login = ({ navigation }) => {
@@ -34,7 +34,6 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <ScrollView>
                 {/* <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginBottom: 20 }}>
                 <Text style={{ color: '#5e3586', fontSize: 16 }}>Go Back</Text>
             </TouchableOpacity> */}
@@ -90,12 +89,11 @@ const Login = ({ navigation }) => {
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.buttonL}>
-                    <TouchableOpacity onPress={handleLogin} >
+                <View >
+                    <TouchableOpacity style={styles.buttonL} onPress={handleLogin} >
                         <Text style={styles.Login}>Login</Text>
                     </TouchableOpacity>
                 </View>
-            </ScrollView>
         </View>
     );
 };

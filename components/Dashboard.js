@@ -2,17 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Detail from './Detail'; // นำเข้า Detail component
+import HomeScreen from './Home';
 const Tab = createBottomTabNavigator();
 
-const HomeScreen = ({ route }) => {
-    const username = route?.params?.username || 'Guest'; // รับ username หรือใช้ค่าเริ่มต้น
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Welcome to the Dashboard!</Text>
-            <Text style={styles.username}>Hello, {username}!</Text>
-        </View>
-    );
-};
+
 
 
 
@@ -31,6 +24,10 @@ const Dashboard = ({ route }) => {
                     initialParams={route.params}
                     options={{
                         headerShown: true,
+                        title: 'Home', 
+                        headerStyle: { backgroundColor: '#5e3586' }, 
+                        headerTintColor: '#fff', 
+                        headerTitleStyle: { fontWeight: 'bold' } ,
                         tabBarLabel: 'Home',
                         tabBarIcon: ({ color }) => (
                             <Text style={{ color }}>🏠</Text>
@@ -40,27 +37,24 @@ const Dashboard = ({ route }) => {
                 <Tab.Screen
                     name="Detail"
                     component={Detail}
+                    options={{
+                        headerShown: true,
+                        title: 'Detail', 
+                        headerStyle: { backgroundColor: '#5e3586' }, 
+                        headerTintColor: '#fff', 
+                        headerTitleStyle: { fontWeight: 'bold' } ,
+                        tabBarLabel: 'Health',
+                        tabBarIcon: ({ color }) => (
+                            <Text style={{ color }}>👨‍⚕️</Text>
+                        ),
+
+                    }}
                 />
             </Tab.Navigator>
 
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5f5f5',
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-    },
-    username: {
-        fontSize: 18,
-    },
-});
+
 
 export default Dashboard;
